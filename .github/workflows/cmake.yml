@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: install dependencies
-      run: sudo apt-get install -y libavcodec-dev libavformat-dev libavutil-dev libcddb2-dev libcdparanoia-dev libebur128-dev libmpg123-dev libmtp-dev libmusicbrainz5-dev libphonon4qt5-dev libqt5svg5-dev libspeex-dev libspeexdsp-dev libtag-extras-dev libtag1-dev libudev-dev libvlc-dev libvlccore-dev libx11-dev pkg-config pkg-kde-tools qtbase5-dev qtmultimedia5-dev qttools5-dev-tools
+      run: sudo apt-get install -y libavahi-client-dev libavahi-core-dev libavcodec-dev libavformat-dev libavutil-dev libcddb2-dev libcdio-paranoia-dev libebur128-dev libmpg123-dev libmtp-dev libmusicbrainz5-dev libphonon4qt5-dev libqt5svg5-dev libspeex-dev libspeexdsp-dev libtag-extras-dev libtag1-dev libudev-dev libvlc-dev libvlccore-dev libx11-dev media-player-info pkg-config pkg-kde-tools qtbase5-dev qtmultimedia5-dev qttools5-dev-tools
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
