@@ -131,7 +131,7 @@ if(TAGLIB_FOUND)
   endif()
   set(CMAKE_REQUIRED_INCLUDES ${TAGLIB_INCLUDES})
   set(CMAKE_REQUIRED_LIBRARIES ${TAGLIB_LIBRARIES})
-  check_cxx_source_compiles("#include <taglib/mpegfile.h>
+  check_cxx_source_compiles("#include <mpegfile.h>
                             int main() { TagLib::MPEG::File *file; file->save(1, true, 3);  return 0; }"
                             TAGLIB_CAN_SAVE_ID3VER)
 else(TAGLIB_FOUND)
