@@ -1,5 +1,5 @@
-!define APPNAME "@WINDOWS_APP_NAME@"
-!define COMPANYNAME "@WINDOWS_COMPANY_NAME@"
+!define APPNAME "@CANTATA_APP_NAME@"
+!define COMPANYNAME "@CANTATA_COMPANY_NAME@"
 !define DESCRIPTION "MPD Client"
 !define VERSIONMAJOR @CPACK_PACKAGE_VERSION_MAJOR@
 !define VERSIONMINOR @CPACK_PACKAGE_VERSION_MINOR@
@@ -13,11 +13,11 @@ RequestExecutionLevel admin
 SetCompressor /SOLID lzma
 !include "MUI2.nsh"
  
-InstallDir "$PROGRAMFILES\@WINDOWS_APP_NAME@"
+InstallDir "$PROGRAMFILES\@CANTATA_APP_NAME@"
 # This will be in the installer/uninstaller's title bar
-Name "@WINDOWS_APP_NAME@"
+Name "@CANTATA_APP_NAME@"
 Icon "cantata.ico"
-outFile "@WINDOWS_APP_NAME@-@CANTATA_VERSION_WITH_SPIN@-Setup.exe"
+outFile "@CANTATA_APP_NAME@-@CANTATA_VERSION_WITH_SPIN@-Setup.exe"
 
 !define MUI_ABORTWARNING
 !define MUI_ICON "cantata.ico"
@@ -179,33 +179,33 @@ section "install"
     writeUninstaller "$INSTDIR\uninstall.exe"
  
     # Start Menu
-    createShortCut "$SMPROGRAMS\@WINDOWS_APP_NAME@.lnk" "$INSTDIR\cantata.exe" "" "$INSTDIR\cantata.exe"
+    createShortCut "$SMPROGRAMS\@CANTATA_APP_NAME@.lnk" "$INSTDIR\cantata.exe" "" "$INSTDIR\cantata.exe"
  
     # Registry information for add/remove programs
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "DisplayName" "@WINDOWS_APP_NAME@"
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "UninstallString" "$\"$INSTDIR\uninstall.exe$\""
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "QuietUninstallString" "$\"$INSTDIR\uninstall.exe$\" /S"
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "InstallLocation" "$\"$INSTDIR$\""
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "DisplayIcon" "$\"$INSTDIR\cantata.exe$\""
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "Publisher" "@WINDOWS_COMPANY_NAME@"
-#    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "HelpLink" "$\"${HELPURL}$\""
-#    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "URLUpdateInfo" "$\"${UPDATEURL}$\""
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "URLInfoAbout" "$\"@WINDOWS_URL@$\""
-    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "DisplayVersion" "@CANTATA_VERSION_WITH_SPIN@"
-    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "VersionMajor" @CPACK_PACKAGE_VERSION_MAJOR@
-    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "VersionMinor" @CPACK_PACKAGE_VERSION_MINOR@
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "DisplayName" "@CANTATA_APP_NAME@"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "UninstallString" "$\"$INSTDIR\uninstall.exe$\""
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "QuietUninstallString" "$\"$INSTDIR\uninstall.exe$\" /S"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "InstallLocation" "$\"$INSTDIR$\""
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "DisplayIcon" "$\"$INSTDIR\cantata.exe$\""
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "Publisher" "@CANTATA_COMPANY_NAME@"
+#    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "HelpLink" "$\"${HELPURL}$\""
+#    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "URLUpdateInfo" "$\"${UPDATEURL}$\""
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "URLInfoAbout" "$\"@WINDOWS_URL@$\""
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "DisplayVersion" "@CANTATA_VERSION_WITH_SPIN@"
+    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "VersionMajor" @CPACK_PACKAGE_VERSION_MAJOR@
+    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "VersionMinor" @CPACK_PACKAGE_VERSION_MINOR@
     # There is no option for modifying or repairing the install
-    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "NoModify" 1
-    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "NoRepair" 1
+    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "NoModify" 1
+    WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "NoRepair" 1
     # Set the INSTALLSIZE constant (!defined at the top of this script) so Add/Remove Programs can accurately report the size
-    # WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@" "EstimatedSize" ${INSTALLSIZE}
+    # WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@" "EstimatedSize" ${INSTALLSIZE}
 sectionEnd
  
 # Uninstaller
  
 section "uninstall"
     # Remove Start Menu launcher
-    delete "$SMPROGRAMS\@WINDOWS_APP_NAME@.lnk"
+    delete "$SMPROGRAMS\@CANTATA_APP_NAME@.lnk"
  
     delete "$INSTDIR\cantata.exe"
     delete "$INSTDIR\cantata-tags.exe"
@@ -679,5 +679,5 @@ section "uninstall"
     rmDir $INSTDIR
  
     # Remove uninstaller information from the registry
-    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@WINDOWS_COMPANY_NAME@ @WINDOWS_APP_NAME@"
+    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\@CANTATA_COMPANY_NAME@ @CANTATA_APP_NAME@"
 sectionEnd
